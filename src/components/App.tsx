@@ -12,13 +12,19 @@ import {
 
 export const App = () => {
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.users);
+  const users:any = useSelector<any>((state) => state.users);
 
   useEffect(() => {
     dispatch(getUsersRequest());
   }, [dispatch]);
 
-  const handleCreateUserSubmit = ({ firstName, lastName }) => {
+  const handleCreateUserSubmit = ({
+    firstName,
+    lastName,
+  }: {
+    firstName: string;
+    lastName: string;
+  }) => {
     dispatch(createUserRequest({ firstName, lastName }));
   };
 

@@ -1,6 +1,12 @@
 import { Button } from "reactstrap";
 
-export const UserListItem = ({ user, onDeleteClick }) => {
+export const UserListItem = ({
+  user,
+  onDeleteClick,
+}: {
+  user: any;
+  onDeleteClick: any;
+}) => {
   const stringToHslColor = (str = "") => {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
-export const NewUserForm = ({ onSubmit }) => {
+export const NewUserForm = ({ onSubmit }: { onSubmit: any }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     onSubmit({ firstName, lastName });
 

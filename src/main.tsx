@@ -24,7 +24,7 @@ const store = configureStore({
 
 sagaMiddleware.run(rootSaga);
 
-const root = createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root")!);
 root.render(
   <Provider store={store}>
     <App />

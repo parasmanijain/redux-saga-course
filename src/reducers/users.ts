@@ -1,4 +1,4 @@
-import { Types } from "../actions/users";
+import { Types } from "../models";
 
 const INITIAL_STATE = {
   items: [],

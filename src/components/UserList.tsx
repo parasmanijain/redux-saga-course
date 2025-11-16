@@ -1,5 +1,6 @@
 import { ListGroup, ListGroupItem } from "reactstrap";
 import { UserListItem } from "./UserListItem";
+import { CreateUserPayload } from "../models";
 
 export const UserList = ({
   users,
@@ -13,8 +14,8 @@ export const UserList = ({
       {users
         .sort(
           (
-            a: { firstName: string; lastName: string },
-            b: { firstName: string; lastName: string }
+            a: CreateUserPayload,
+            b: CreateUserPayload
           ) => {
             if (a.firstName > b.firstName) {
               return 1;

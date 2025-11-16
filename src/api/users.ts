@@ -1,18 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-
-// -----------------------------
-// Types (replace with real User type if you have one)
-// -----------------------------
-export interface User {
-  id: string | number;
-  firstName: string;
-  lastName: string;
-}
-
-export interface CreateUserPayload {
-  firstName: string;
-  lastName: string;
-}
+import { CreateUserPayload, User } from "../models";
 
 // -----------------------------
 // API Calls

@@ -7,9 +7,10 @@ import {
   fork,
 } from "redux-saga/effects";
 import * as api from "../api/users";
-import { getUsersSuccess, Types, usersError } from "../actions/users";
+import { getUsersSuccess, usersError } from "../actions/users";
 import { getUsers as getApiUsers } from "../api/users";
 import { SagaIterator } from "redux-saga";
+import { Types } from "../models";
 
 function* getUsers(): SagaIterator {
   try {

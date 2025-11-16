@@ -4,10 +4,10 @@ import createSagaMiddleware from "redux-saga";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
-import "./style.css";
-import App from "./components/App";
+import "./style.scss";
 import reducers from "./reducers";
 import rootSaga from "./sagas";
+import { App } from "./components/App";
 
 const sagaMiddleware = createSagaMiddleware();
 

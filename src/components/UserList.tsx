@@ -1,7 +1,7 @@
-import UserListItem from "./UserListItem";
 import { ListGroup, ListGroupItem } from "reactstrap";
+import { UserListItem } from "./UserListItem";
 
-const UserList = ({ users, onDeleteUserClick }) => {
+export const UserList = ({ users, onDeleteUserClick }) => {
   return (
     <ListGroup>
       {users
@@ -27,5 +27,3 @@ const UserList = ({ users, onDeleteUserClick }) => {
     </ListGroup>
   );
 };
-
-export default UserList;

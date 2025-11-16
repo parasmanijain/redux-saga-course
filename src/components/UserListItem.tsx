@@ -1,6 +1,6 @@
 import { Button } from "reactstrap";
 
-const UserListItem = ({ user, onDeleteClick }) => {
+export const UserListItem = ({ user, onDeleteClick }) => {
   const stringToHslColor = (str = "") => {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {
@@ -46,5 +46,3 @@ const UserListItem = ({ user, onDeleteClick }) => {
     </div>
   );
 };
-
-export default UserListItem;

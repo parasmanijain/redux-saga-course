@@ -1,16 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import NewUserForm from "./NewUserForm";
-import UserList from "./UserList";
+import { Alert } from "reactstrap";
+import { NewUserForm } from "./NewUserForm";
+import { UserList } from "./UserList";
 import {
-  getUsersRequest,
   createUserRequest,
   deleteUserRequest,
+  getUsersRequest,
   usersError,
 } from "../actions/users";
-import { Alert } from "reactstrap";
 
-const App = () => {
+export const App = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
 
@@ -22,7 +22,7 @@ const App = () => {
     dispatch(createUserRequest({ firstName, lastName }));
   };
 
-  const handleDeleteUserClick = (userId) => {
+  const handleDeleteUserClick = (userId: any) => {
     dispatch(deleteUserRequest(userId));
   };
 
@@ -46,5 +46,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;

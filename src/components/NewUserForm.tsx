@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
-const NewUserForm = ({ onSubmit }) => {
+export const NewUserForm = ({ onSubmit }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
@@ -42,5 +42,3 @@ const NewUserForm = ({ onSubmit }) => {
     </Form>
   );
 };
-
-export default NewUserForm;

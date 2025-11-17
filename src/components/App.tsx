@@ -12,8 +12,10 @@ import {
 
 export const App = () => {
   const dispatch = useDispatch();
-  const users:any = useSelector<any>((state) => state.users);
-
+  const users = useSelector((state: any) => ({
+    ...state.users,
+    items: state.users.items.map((u: any) => ({ ...u })),
+  }));
   useEffect(() => {
     dispatch(getUsersRequest());
   }, [dispatch]);

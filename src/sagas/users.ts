@@ -20,7 +20,7 @@ function* getUsers(): SagaIterator {
     const result = yield call(getApiUsers);
     yield put(
       getUsersSuccess({
-        items: result.data.data,
+        items: result.data,
       })
     );
   } catch (e) {

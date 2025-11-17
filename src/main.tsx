@@ -11,8 +11,8 @@ import { App } from "./components/App";
 
 const sagaMiddleware = createSagaMiddleware();
 
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://rem-rest-api.herokuapp.com/api";
+//axios.defaults.withCredentials = true;
+axios.defaults.baseURL = "http://localhost:3004";
 
 const store = configureStore({
   reducer: reducers,

@@ -1,4 +1,5 @@
 import { Button } from "reactstrap";
+import classes from "./UserListItem.module.scss";
 
 export const UserListItem = ({
   user,
@@ -18,17 +19,10 @@ export const UserListItem = ({
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className={classes.listItemContainer}>
       <div
+        className={classes.listItem}
         style={{
-          margin: "auto 0",
-          textAlign: "center",
-          height: "40px",
-          width: "40px",
-          lineHeight: "40px",
-          borderRadius: "50%",
-          color: "white",
-          fontWeight: "bold",
           background: stringToHslColor(user.firstName + user.lastName),
         }}
       >
@@ -36,10 +30,10 @@ export const UserListItem = ({
           ? user.firstName[0].toUpperCase() + user.lastName[0].toUpperCase()
           : ""}
       </div>
-      <div style={{ margin: "auto 0", flexGrow: 1, paddingLeft: "10px" }}>
+      <div className={classes.labelContainer}>
         {user.firstName} {user.lastName}
       </div>
-      <div style={{ margin: "auto 0" }}>
+      <div className={classes.buttonContainer}>
         <Button
           size="sm"
           color="danger"

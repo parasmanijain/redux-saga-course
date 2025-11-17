@@ -1,0 +1,23 @@
+.listItemContainer {
+  display: flex;
+  .listItem {
+    margin: auto 0;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+  }
+
+  .labelContainer {
+    margin: auto 0;
+    flex-grow: 1;
+    padding-left: 10px;
+  }
+
+  .buttonContainer {
+    margin: auto 0;
+  }
+}

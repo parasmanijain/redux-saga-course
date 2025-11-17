@@ -12,10 +12,8 @@ import {
 
 export const App = () => {
   const dispatch = useDispatch();
-  const users = useSelector((state: any) => ({
-    ...state.users,
-    items: state.users.items.map((u: any) => ({ ...u })),
-  }));
+  const users = useSelector<any, any>((state) => state.users);
+
   useEffect(() => {
     dispatch(getUsersRequest());
   }, [dispatch]);
@@ -48,7 +46,7 @@ export const App = () => {
       {!!users.items && !!users.items.length && (
         <UserList
           onDeleteUserClick={handleDeleteUserClick}
-          users={users.items}
+          users={users.items.map((u: any) => ({ ...u }))}
         />
       )}
     </div>

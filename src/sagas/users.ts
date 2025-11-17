@@ -6,10 +6,13 @@ import {
   put,
   fork,
 } from "redux-saga/effects";
-import * as api from "../api/users";
-import { getUsersSuccess, usersError } from "../actions/users";
-import { getUsers as getApiUsers } from "../api/users";
 import { SagaIterator } from "redux-saga";
+import { getUsersSuccess, usersError } from "../actions/users";
+import {
+  getUsers as getApiUsers,
+  deleteUser as deleteApiUser,
+  createUser as createApiUser,
+} from "../api/users";
 import { Types } from "../models";
 
 function* getUsers(): SagaIterator {
@@ -38,7 +41,7 @@ function* watchGetUsersRequest(): SagaIterator {
 
 function* deleteUser(userId: any): SagaIterator {
   try {
-    yield call(api.deleteUser, userId);
+    yield call(deleteApiUser, userId);
     yield call(getUsers);
   } catch (e) {
     yield put(
@@ -60,7 +63,7 @@ function* watchDeleteUserRequest(): SagaIterator {
 
 function* createUser({ payload }: { payload: any }): SagaIterator {
   try {
-    yield call(api.createUser, {
+    yield call(createApiUser, {
       firstName: payload.firstName,
       lastName: payload.lastName,
     });
@@ -75,10 +78,7 @@ function* createUser({ payload }: { payload: any }): SagaIterator {
 }
 
 function* watchCreateUserRequest(): SagaIterator {
-  yield takeLatest(
-    Types.CREATE_USER_REQUEST as any,
-    createUser
-  );
+  yield takeLatest(Types.CREATE_USER_REQUEST as any, createUser);
 }
 
 const userSagas = [

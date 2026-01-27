@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
-    "axios": "^1.13.2",
+    "axios": "^1.13.3",
     "bootstrap": "^5.3.8",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-redux": "^9.2.0",
     "reactstrap": "^9.2.3",
     "redux": "^5.0.1",
@@ -20,11 +20,11 @@
     "server": "json-server --watch db.json --port 3004"
   },
   "devDependencies": {
-    "@types/react": "^19.2.8",
+    "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
-    "json-server": "^1.0.0-beta.3",
-    "sass-embedded": "^1.97.2",
+    "json-server": "^1.0.0-beta.5",
+    "sass-embedded": "^1.97.3",
     "typescript": "^5.9.3",
     "vite": "^7.3.1"
   }

@@ -1,12 +1,89 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    // Language and Environment
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "jsx": "react-jsx",
-    "strict": true,
+    "useDefineForClassFields": true,
+    "types": ["node"],
+    
+    // Deprecation handling for TypeScript 6.0
+    "ignoreDeprecations": "6.0",
+    
+    // Module Resolution
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    
+    // Type Checking - Enhanced for TypeScript 6.0
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+    "useUnknownInCatchVariables": true,
+    
+    // Emit
+    "noEmit": true,
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "removeComments": false,
+    "importHelpers": true,
+    "downlevelIteration": true,
+    
+    // Interop Constraints
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    
+    // Completeness
+    "skipDefaultLibCheck": true,
+    
+    // TypeScript 6.0 Specific Features
+    "allowArbitraryExtensions": false,
+    "customConditions": [],
+    
+    // Path Mapping (deprecated but functional with ignoreDeprecations)
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/actions/*": ["src/actions/*"],
+      "@/reducers/*": ["src/reducers/*"],
+      "@/sagas/*": ["src/sagas/*"],
+      "@/models/*": ["src/models/*"],
+      "@/api/*": ["src/api/*"]
+    }
   },
-  "include": ["src"]
+  "include": [
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ],
+  "ts-node": {
+    "esm": true
+  }
 }
